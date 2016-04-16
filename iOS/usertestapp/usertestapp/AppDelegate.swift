@@ -16,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        self.window = UIWindow(frame:UIScreen.mainScreen().bounds)        
-        self.window!.rootViewController = MainViewController()
-        
+        self.window = UIWindow(frame:UIScreen.mainScreen().bounds)
+
+        let tabBarController = MainTabViewController()
+              let nvc = BaseNavigationController(rootViewController: tabBarController)
+        self.window!.rootViewController = nvc
         self.window!.makeKeyAndVisible()
         
 

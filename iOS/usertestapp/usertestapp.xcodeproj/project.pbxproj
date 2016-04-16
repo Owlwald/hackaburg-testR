@@ -12,6 +12,15 @@
 		2B4826F51CC260130088FAA5 /* usertestappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4826F41CC260130088FAA5 /* usertestappTests.swift */; };
 		2B4827001CC260130088FAA5 /* usertestappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4826FF1CC260130088FAA5 /* usertestappUITests.swift */; };
 		2B4827161CC27D170088FAA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827151CC27D170088FAA5 /* MainViewController.swift */; };
+		2B4827181CC281C70088FAA5 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827171CC281C70088FAA5 /* BaseNavigationViewController.swift */; };
+		2B48271A1CC285B20088FAA5 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827191CC285B20088FAA5 /* MainTabViewController.swift */; };
+		2B48271C1CC28B890088FAA5 /* Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B48271B1CC28B890088FAA5 /* Experiment.swift */; };
+		2B48271E1CC28CCA0088FAA5 /* ExperimentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B48271D1CC28CCA0088FAA5 /* ExperimentTableViewController.swift */; };
+		2B4827201CC28DDB0088FAA5 /* ExperimentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B48271F1CC28DDB0088FAA5 /* ExperimentsViewModel.swift */; };
+		2B4827221CC291360088FAA5 /* ExperimentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827211CC291360088FAA5 /* ExperimentTableViewCell.swift */; };
+		2B4827241CC291B90088FAA5 /* DetailImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827231CC291B90088FAA5 /* DetailImageLabel.swift */; };
+		2B4827261CC292430088FAA5 /* SubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827251CC292430088FAA5 /* SubtitleLabel.swift */; };
+		2B4827281CC292AD0088FAA5 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827271CC292AD0088FAA5 /* BaseLabel.swift */; };
 		971C3B2D976A3FB30E60C178 /* Pods_usertestapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25110EC863BFA0A193760E08 /* Pods_usertestapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +54,15 @@
 		2B4826FF1CC260130088FAA5 /* usertestappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usertestappUITests.swift; sourceTree = "<group>"; };
 		2B4827011CC260130088FAA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B4827151CC27D170088FAA5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2B4827171CC281C70088FAA5 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		2B4827191CC285B20088FAA5 /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		2B48271B1CC28B890088FAA5 /* Experiment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Experiment.swift; sourceTree = "<group>"; };
+		2B48271D1CC28CCA0088FAA5 /* ExperimentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentTableViewController.swift; sourceTree = "<group>"; };
+		2B48271F1CC28DDB0088FAA5 /* ExperimentsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentsViewModel.swift; sourceTree = "<group>"; };
+		2B4827211CC291360088FAA5 /* ExperimentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentTableViewCell.swift; sourceTree = "<group>"; };
+		2B4827231CC291B90088FAA5 /* DetailImageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageLabel.swift; sourceTree = "<group>"; };
+		2B4827251CC292430088FAA5 /* SubtitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleLabel.swift; sourceTree = "<group>"; };
+		2B4827271CC292AD0088FAA5 /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		5B65F2D71FC9A3655CB3B92C /* Pods-usertestapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-usertestapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-usertestapp/Pods-usertestapp.debug.xcconfig"; sourceTree = "<group>"; };
 		702B2A4A486B9CF3109F7736 /* Pods-usertestapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-usertestapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-usertestapp/Pods-usertestapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				2B4827151CC27D170088FAA5 /* MainViewController.swift */,
+				2B4827171CC281C70088FAA5 /* BaseNavigationViewController.swift */,
+				2B4827191CC285B20088FAA5 /* MainTabViewController.swift */,
+				2B48271D1CC28CCA0088FAA5 /* ExperimentTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -166,6 +187,10 @@
 		2B4827111CC27CEB0088FAA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2B4827211CC291360088FAA5 /* ExperimentTableViewCell.swift */,
+				2B4827231CC291B90088FAA5 /* DetailImageLabel.swift */,
+				2B4827251CC292430088FAA5 /* SubtitleLabel.swift */,
+				2B4827271CC292AD0088FAA5 /* BaseLabel.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -173,6 +198,7 @@
 		2B4827121CC27CFA0088FAA5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2B48271F1CC28DDB0088FAA5 /* ExperimentsViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -180,6 +206,7 @@
 		2B4827131CC27D010088FAA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2B48271B1CC28B890088FAA5 /* Experiment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -379,8 +406,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4827261CC292430088FAA5 /* SubtitleLabel.swift in Sources */,
+				2B4827201CC28DDB0088FAA5 /* ExperimentsViewModel.swift in Sources */,
+				2B48271C1CC28B890088FAA5 /* Experiment.swift in Sources */,
+				2B4827181CC281C70088FAA5 /* BaseNavigationViewController.swift in Sources */,
+				2B48271A1CC285B20088FAA5 /* MainTabViewController.swift in Sources */,
+				2B4827221CC291360088FAA5 /* ExperimentTableViewCell.swift in Sources */,
 				2B4826DE1CC260130088FAA5 /* AppDelegate.swift in Sources */,
+				2B48271E1CC28CCA0088FAA5 /* ExperimentTableViewController.swift in Sources */,
+				2B4827281CC292AD0088FAA5 /* BaseLabel.swift in Sources */,
 				2B4827161CC27D170088FAA5 /* MainViewController.swift in Sources */,
+				2B4827241CC291B90088FAA5 /* DetailImageLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

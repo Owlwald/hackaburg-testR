@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     init() {
         contentView = UIView(forAutoLayout: ())
         super.init(nibName: nil, bundle: nil)
+        self.title = "TestR"
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +25,7 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        contentView.backgroundColor = UIColor.greenColor()
+        contentView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(contentView)
         contentView.autoPinEdgesToSuperviewEdges()
         super.viewDidLoad()
