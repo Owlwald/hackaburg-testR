@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let vc = ExperimentTableViewController(style: .Plain)
               let nvc = BaseNavigationController(rootViewController: vc)
         self.window!.rootViewController = nvc
+        self.window!.tintColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         
 

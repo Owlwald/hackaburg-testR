@@ -19,10 +19,18 @@ class ExperimentTableViewController: UITableViewController {
         self.tableView.registerClass(ExperimentTableViewCell.self, forCellReuseIdentifier: "default")
         self.tableView.estimatedRowHeight = 100
         self.title = "TestR"
+        setupNavBarButtons()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupNavBarButtons() {
+        let settingsButton = UIBarButtonItem(image: UIImage(named: "icon_settings"), style: .Plain, target: self, action: "test")
+        let reloadButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "test")
+        
+        self.navigationItem.rightBarButtonItems = [settingsButton, reloadButton]
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
