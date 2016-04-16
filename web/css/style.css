@@ -1,20 +1,20 @@
 body{
     background-color:beige;
 }
-#experiment{
+.experiment{
     background-color:#d3d3d3;
     padding:8px;
     border-radius:8px;
     margin:12px;
     max-width:420px;
 }
-#navigation{
+.navigation{
     background-color:#BABABA;
     padding:8px;
     
     
 }
-#name{
+.name{
     margin-left:12px;
     margin-top:12px;
     margin-bottom:0px;
@@ -25,18 +25,18 @@ body{
 .jumbotron{
     margin:4px;
 }
-#left{
+.left{
     float:left;
     margin-left:-24px;
     margin-top:8px;
 }
-#right{
+.right{
     float:right;
     margin:8px;
     margin-right:16px;
     text-align: right;
 }
-#left,#right p{
+.left,#right p{
     font-size:1em;
     font-family:'Roboto',sans-serif;
 }
