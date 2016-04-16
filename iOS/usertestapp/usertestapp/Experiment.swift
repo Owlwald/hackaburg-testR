@@ -17,8 +17,9 @@ class Experiment {
     let location: String
     let type: String
     let description: String
+    let reward: String
     
-    init(id: String,title: String,  startDate: NSDate, endDate: NSDate, location: String, type: String, description: String) {
+    init(id: String,title: String,  startDate: NSDate, endDate: NSDate, location: String, type: String, description: String, reward: String) {
         self.id = id
         self.title = title
         self.startDate = startDate
@@ -26,6 +27,7 @@ class Experiment {
         self.location = location
         self.type = type
         self.description = description
+        self.reward = reward
     }
 
     var duration: Int {

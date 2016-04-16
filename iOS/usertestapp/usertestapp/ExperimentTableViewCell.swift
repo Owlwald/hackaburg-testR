@@ -20,6 +20,7 @@ class ExperimentTableViewCell: UITableViewCell {
     // ImageLabels left
     let typeImageLabel = DetailImageLabel(forAutoLayout: ())
     let durationImageLabel = DetailImageLabel(forAutoLayout: ())
+    let rewardImageLabel = DetailImageLabel(forAutoLayout: ())
     
     // ImageLabels right
     let spotsImageLabel = DetailImageLabel(forAutoLayout: ())
@@ -49,7 +50,7 @@ class ExperimentTableViewCell: UITableViewCell {
         
         leftInnerDetailStackView.addArrangedSubview(typeImageLabel)
         leftInnerDetailStackView.addArrangedSubview(durationImageLabel)
-        leftInnerDetailStackView.addArrangedSubview(UIView())
+        leftInnerDetailStackView.addArrangedSubview(rewardImageLabel)
         
         rightInnerDetailStackView.addArrangedSubview(spotsImageLabel)
         rightInnerDetailStackView.addArrangedSubview(timeImageLabel)
@@ -85,12 +86,14 @@ class ExperimentTableViewCell: UITableViewCell {
         timeImageLabel.setImage("tabBarIcon")
         locationImageLabel.setImage("tabBarIcon")
         spotsImageLabel.setImage("tabBarIcon")
+        rewardImageLabel.setImage("tabBarIcon")
         
         typeImageLabel.setTitle(experiment.type)
         timeImageLabel.setTitle(experiment.startDate.displayFormat)
         spotsImageLabel.setTitle("15 von 30")
         locationImageLabel.setTitle(experiment.location)
         durationImageLabel.setTitle("\(experiment.duration)")
+        rewardImageLabel.setTitle(experiment.reward)
         
         
     }
