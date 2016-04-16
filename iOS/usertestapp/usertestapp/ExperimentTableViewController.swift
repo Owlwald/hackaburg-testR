@@ -18,6 +18,7 @@ class ExperimentTableViewController: UITableViewController {
         super.init(style: style)
         self.tableView.registerClass(ExperimentTableViewCell.self, forCellReuseIdentifier: "default")
         self.tableView.estimatedRowHeight = 100
+        self.title = "TestR"
     }
     
     required init?(coder aDecoder: NSCoder) {

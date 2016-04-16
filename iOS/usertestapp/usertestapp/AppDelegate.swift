@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Override point for customization after application launch.
         self.window = UIWindow(frame:UIScreen.mainScreen().bounds)
 
-        let tabBarController = MainTabViewController()
-              let nvc = BaseNavigationController(rootViewController: tabBarController)
+        let vc = ExperimentTableViewController(style: .Plain)
+              let nvc = BaseNavigationController(rootViewController: vc)
         self.window!.rootViewController = nvc
         self.window!.makeKeyAndVisible()
         
