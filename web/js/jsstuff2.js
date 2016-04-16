@@ -21,9 +21,12 @@ function onclick() {
     
     var description = document.querySelector("#input_description").value;
     
+    var date = document.querySelector("#input_date").value;
+    
     myFirebaseRef.push({
         'name': name,
         'category':category,
+        'date':date+" "+starttime,
         'duration': duration,
         'starttime':starttime,
         'endtime':endtime,
