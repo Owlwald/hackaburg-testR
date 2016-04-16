@@ -42,5 +42,12 @@ class ExperimentTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let experiment = viewModel.itemAtIndex(indexPath.row)
+        let vc = ExperimentDetailViewController(experiment: experiment)
+        vc.edgesForExtendedLayout = UIRectEdge.None
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
 }

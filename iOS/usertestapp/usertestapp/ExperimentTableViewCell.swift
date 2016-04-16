@@ -13,21 +13,8 @@ import PureLayout
 class ExperimentTableViewCell: UITableViewCell {
     // StackViews
     let outerStackView = UIStackView(forAutoLayout: ())
-    let detailStackView = UIStackView(forAutoLayout: ())
-    let leftInnerDetailStackView = UIStackView(forAutoLayout: ())
-    let rightInnerDetailStackView = UIStackView(forAutoLayout: ())
-    
-    // ImageLabels left
-    let typeImageLabel = DetailImageLabel(forAutoLayout: ())
-    let durationImageLabel = DetailImageLabel(forAutoLayout: ())
-    let rewardImageLabel = DetailImageLabel(forAutoLayout: ())
-    
-    // ImageLabels right
-    let spotsImageLabel = DetailImageLabel(forAutoLayout: ())
-    let timeImageLabel = DetailImageLabel(forAutoLayout: ())
-    let locationImageLabel = DetailImageLabel(forAutoLayout: ())
-    
-    // TitleLabel
+    let detailStackView = DetailStackView(forAutoLayout: ())
+      // TitleLabel
     let titleLabel = BaseLabel(forAutoLayout: ())
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -44,58 +31,19 @@ class ExperimentTableViewCell: UITableViewCell {
         outerStackView.autoPinEdgesToSuperviewEdges()
         outerStackView.addArrangedSubview(titleLabel)
         outerStackView.addArrangedSubview(detailStackView)
+        detailStackView.setupLayout()
         
-        detailStackView.addArrangedSubview(leftInnerDetailStackView)
-        detailStackView.addArrangedSubview(rightInnerDetailStackView)
-        
-        leftInnerDetailStackView.addArrangedSubview(typeImageLabel)
-        leftInnerDetailStackView.addArrangedSubview(durationImageLabel)
-        leftInnerDetailStackView.addArrangedSubview(rewardImageLabel)
-        
-        rightInnerDetailStackView.addArrangedSubview(spotsImageLabel)
-        rightInnerDetailStackView.addArrangedSubview(timeImageLabel)
-        rightInnerDetailStackView.addArrangedSubview(locationImageLabel)
-        
-        outerStackView.spacing = 8
+                outerStackView.spacing = 8
         outerStackView.axis = .Vertical
         outerStackView.distribution = .Fill
         outerStackView.alignment = .Fill
         
-        detailStackView.axis = .Horizontal
-        detailStackView.spacing = 16
-        detailStackView.distribution = .FillEqually
-        detailStackView.alignment = .Center
-        
-        leftInnerDetailStackView.axis = .Vertical
-        leftInnerDetailStackView.spacing = 8
-        leftInnerDetailStackView.distribution = .Fill
-        leftInnerDetailStackView.alignment = .Leading
-        
-        rightInnerDetailStackView.axis = .Vertical
-        rightInnerDetailStackView.spacing = 8
-        rightInnerDetailStackView.distribution = .Fill
-        rightInnerDetailStackView.alignment = .Leading
-    }
+
+            }
     
     func setExperiment(experiment: Experiment) {
         titleLabel.text = experiment.title
-
-
-        durationImageLabel.setImage("tabBarIcon")
-        typeImageLabel.setImage("tabBarIcon")
-        timeImageLabel.setImage("tabBarIcon")
-        locationImageLabel.setImage("tabBarIcon")
-        spotsImageLabel.setImage("tabBarIcon")
-        rewardImageLabel.setImage("tabBarIcon")
-        
-        typeImageLabel.setTitle(experiment.type)
-        timeImageLabel.setTitle(experiment.startDate.displayFormat)
-        spotsImageLabel.setTitle("15 von 30")
-        locationImageLabel.setTitle(experiment.location)
-        durationImageLabel.setTitle("\(experiment.duration)")
-        rewardImageLabel.setTitle(experiment.reward)
-        
-        
+        detailStackView.setExperiment(experiment)
     }
     
     
