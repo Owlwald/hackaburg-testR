@@ -11,7 +11,7 @@ import UIKit
 class SubtitleLabel: BaseLabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        font = UIFont(name: (self.font?.fontName)!, size: 20)
+        font = UIFont(name: (self.font?.fontName)!, size: 12)
     }
     
     required init(coder aDecoder: NSCoder) {

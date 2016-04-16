@@ -29,9 +29,10 @@ class DetailImageLabel: UIView {
         outerStackView.autoPinEdgesToSuperviewEdges()
         outerStackView.addArrangedSubview(imageView)
         outerStackView.addArrangedSubview(label)
+        label.text = "init"
         outerStackView.axis = .Horizontal
-        outerStackView.distribution = .EqualSpacing
-        outerStackView.alignment = .Leading
+        outerStackView.distribution = .Fill
+        outerStackView.alignment = .Fill
         outerStackView.spacing = 8
     }
     

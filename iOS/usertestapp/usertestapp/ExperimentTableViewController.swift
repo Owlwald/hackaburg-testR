@@ -16,7 +16,8 @@ class ExperimentTableViewController: UITableViewController {
     override init(style: UITableViewStyle) {
         viewModel = ExperimentsViewModel()
         super.init(style: style)
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "default")
+        self.tableView.registerClass(ExperimentTableViewCell.self, forCellReuseIdentifier: "default")
+        self.tableView.estimatedRowHeight = 100
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,17 +33,14 @@ class ExperimentTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("default")
+        let cell = tableView.dequeueReusableCellWithIdentifier("default") as! ExperimentTableViewCell
         
         let experiment = viewModel.itemAtIndex(indexPath.row)
-        cell?.textLabel?.text = experiment.title
-        cell?.detailTextLabel?.text = experiment.id
+        print(experiment)
+        cell.setExperiment(experiment)
         
-        return cell!
+        return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
-    }
     
 }
