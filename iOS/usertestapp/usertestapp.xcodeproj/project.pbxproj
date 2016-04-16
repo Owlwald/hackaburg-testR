@@ -21,6 +21,7 @@
 		2B4827241CC291B90088FAA5 /* DetailImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827231CC291B90088FAA5 /* DetailImageLabel.swift */; };
 		2B4827261CC292430088FAA5 /* SubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827251CC292430088FAA5 /* SubtitleLabel.swift */; };
 		2B4827281CC292AD0088FAA5 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827271CC292AD0088FAA5 /* BaseLabel.swift */; };
+		2B48272B1CC2A36B0088FAA5 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B48272A1CC2A36B0088FAA5 /* NSDate.swift */; };
 		971C3B2D976A3FB30E60C178 /* Pods_usertestapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25110EC863BFA0A193760E08 /* Pods_usertestapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		2B4827231CC291B90088FAA5 /* DetailImageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageLabel.swift; sourceTree = "<group>"; };
 		2B4827251CC292430088FAA5 /* SubtitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleLabel.swift; sourceTree = "<group>"; };
 		2B4827271CC292AD0088FAA5 /* BaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		2B48272A1CC2A36B0088FAA5 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		5B65F2D71FC9A3655CB3B92C /* Pods-usertestapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-usertestapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-usertestapp/Pods-usertestapp.debug.xcconfig"; sourceTree = "<group>"; };
 		702B2A4A486B9CF3109F7736 /* Pods-usertestapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-usertestapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-usertestapp/Pods-usertestapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +224,7 @@
 		2B4827291CC2A2D70088FAA5 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				2B48272A1CC2A36B0088FAA5 /* NSDate.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				2B48271E1CC28CCA0088FAA5 /* ExperimentTableViewController.swift in Sources */,
 				2B4827281CC292AD0088FAA5 /* BaseLabel.swift in Sources */,
 				2B4827161CC27D170088FAA5 /* MainViewController.swift in Sources */,
+				2B48272B1CC2A36B0088FAA5 /* NSDate.swift in Sources */,
 				2B4827241CC291B90088FAA5 /* DetailImageLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

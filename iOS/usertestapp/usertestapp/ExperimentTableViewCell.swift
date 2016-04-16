@@ -87,7 +87,7 @@ class ExperimentTableViewCell: UITableViewCell {
         spotsImageLabel.setImage("tabBarIcon")
         
         typeImageLabel.setTitle(experiment.type)
-        timeImageLabel.setTitle("12-13")
+        timeImageLabel.setTitle(experiment.startDate.displayFormat)
         spotsImageLabel.setTitle("15 von 30")
         locationImageLabel.setTitle(experiment.location)
         durationImageLabel.setTitle("\(experiment.duration)")
