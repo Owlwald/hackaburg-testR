@@ -80,7 +80,7 @@
 	  items.push('</ul>');
 	  items.push('<ul class="right">');
 	  items.push('<li class="amount">Amount: '+item.amount+'</li>');
-	  items.push('<li class="time">Time:'+item.starttime+" until"+item.endtime+'</li>');
+	  items.push('<li class="time">Time:'+item.starttime+" until "+item.endtime+'</li>');
 	  items.push('<li class="location">Location: '+item.location+'</li>');
 	  items.push('</ul>');
 
