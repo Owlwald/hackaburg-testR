@@ -38,9 +38,9 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="./index.html">Today</a></li>
-                        <li><a href="#">Tomorrow</a></li>
-                        <li><a href="#">Day after tomorrow</a></li>
+                        <li><a href="./index.html">Experiments</a></li>
+                        <li id="login"><a href="#">My Experiments</a></li>
+                        <li><a href="./profile.html">My Profile</a></li>
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -89,7 +89,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="input_duration"></label>
                     <div class="col-md-4">
-                        <input id="input_duration" name="input_duration" type="text" placeholder="Duration" class="form-control input-md">
+                        <input id="input_duration" name="input_duration" type="number" placeholder="Duration in minutes" class="form-control input-md" required="">
 
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="input_time"></label>
                     <div class="col-md-4">
-                        <input id="input_starttime" name="input_starttime" type="time" placeholder="Start time" class="form-control input-md">
+                        <input id="input_starttime" name="input_starttime" type="time" placeholder="Start time" class="form-control input-md" required="">
 
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="input_time"></label>
                     <div class="col-md-4">
-                        <input id="input_endtime" name="input_endtime" type="time" placeholder="End time" class="form-control input-md">
+                        <input id="input_endtime" name="input_endtime" type="time" placeholder="End time" class="form-control input-md" required="">
 
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="input_location"></label>
                     <div class="col-md-4">
-                        <input id="input_location" name="input_location" type="text" placeholder="Location" class="form-control input-md">
+                        <input id="input_location" name="input_location" type="text" placeholder="Location" class="form-control input-md" required="">
 
                     </div>
                 </div>

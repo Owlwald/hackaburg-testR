@@ -26,13 +26,29 @@ function onclick() {
     myFirebaseRef.push({
         'name': name,
         'category':category,
-        'date':date+" "+starttime,
         'duration': duration,
-        'starttime':starttime,
-        'endtime':endtime,
+        'starttime':date+" "+starttime,
+        'endtime':date+" "+endtime,
         'reward':reward,
         'location':location,
         'description':description,
         'available': true
     });
+}
+
+var loginButton = document.querySelector("#login");
+loginButton.addEventListener("click",onclickk);
+
+function onclickk(){
+    console.log("click");
+    myFirebaseRef.authWithOAuthPopup("google", authHandler);
+}
+
+function authHandler(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+    location
+  }
 }
