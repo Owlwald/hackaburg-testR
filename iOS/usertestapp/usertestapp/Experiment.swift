@@ -18,8 +18,10 @@ class Experiment {
     let type: String
     let description: String
     let reward: String
+    let duration: Int
+    let available: Bool
     
-    init(id: String,title: String,  startDate: NSDate, endDate: NSDate, location: String, type: String, description: String, reward: String) {
+    init(id: String,title: String,  startDate: NSDate, endDate: NSDate, location: String, type: String, description: String, reward: String, duration: Int, available: Bool) {
         self.id = id
         self.title = title
         self.startDate = startDate
@@ -28,11 +30,8 @@ class Experiment {
         self.type = type
         self.description = description
         self.reward = reward
-    }
-
-    var duration: Int {
-        print("not yet implemented")
-        return 0
+        self.duration = duration
+        self.available = available
     }
     
 }

@@ -28,6 +28,17 @@ class ExperimentTableViewController: UITableViewController {
         return 1
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        reload()
+    }
+    
+    func reload() {
+        viewModel.loadData().then { _ in
+            self.tableView.reloadData()
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfItems()
     }
