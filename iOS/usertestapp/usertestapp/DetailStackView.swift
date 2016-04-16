@@ -17,16 +17,18 @@ class DetailStackView: UIStackView {
     // ImageLabels left
     let typeImageLabel = DetailImageLabel(forAutoLayout: ())
     let durationImageLabel = DetailImageLabel(forAutoLayout: ())
-    let rewardImageLabel = DetailImageLabel(forAutoLayout: ())
+    let timeImageLabel = DetailImageLabel(forAutoLayout: ())
+
     
     // ImageLabels right
-    let spotsImageLabel = DetailImageLabel(forAutoLayout: ())
-    let timeImageLabel = DetailImageLabel(forAutoLayout: ())
+    let rewardImageLabel = DetailImageLabel(forAutoLayout: ())
     let locationImageLabel = DetailImageLabel(forAutoLayout: ())
-    
+
 
     
     func setupLayout() {
+        self.layoutMargins = UIEdgeInsetsMake(8, 8, 8, 8)
+        self.layoutMarginsRelativeArrangement = true
         self.addArrangedSubview(leftInnerDetailStackView)
         self.addArrangedSubview(rightInnerDetailStackView)
         
@@ -37,10 +39,9 @@ class DetailStackView: UIStackView {
         
         leftInnerDetailStackView.addArrangedSubview(typeImageLabel)
         leftInnerDetailStackView.addArrangedSubview(durationImageLabel)
-        leftInnerDetailStackView.addArrangedSubview(rewardImageLabel)
+        leftInnerDetailStackView.addArrangedSubview(timeImageLabel)
         
-        rightInnerDetailStackView.addArrangedSubview(spotsImageLabel)
-        rightInnerDetailStackView.addArrangedSubview(timeImageLabel)
+        rightInnerDetailStackView.addArrangedSubview(rewardImageLabel)
         rightInnerDetailStackView.addArrangedSubview(locationImageLabel)
         
         
@@ -57,16 +58,14 @@ class DetailStackView: UIStackView {
     }
     
     func setExperiment(experiment: Experiment) {
-        durationImageLabel.setImage("tabBarIcon")
-        typeImageLabel.setImage("tabBarIcon")
-        timeImageLabel.setImage("tabBarIcon")
-        locationImageLabel.setImage("tabBarIcon")
-        spotsImageLabel.setImage("tabBarIcon")
-        rewardImageLabel.setImage("tabBarIcon")
+        durationImageLabel.setImage("icon_duration")
+        typeImageLabel.setImage("icon_category")
+        timeImageLabel.setImage("icon_time_frame")
+        locationImageLabel.setImage("icon_location")
+        rewardImageLabel.setImage("icon_reward")
         
         typeImageLabel.setTitle(experiment.type)
         timeImageLabel.setTitle(experiment.startDate.displayFormat)
-        spotsImageLabel.setTitle("15 von 30")
         locationImageLabel.setTitle(experiment.location)
         durationImageLabel.setTitle("\(experiment.duration)")
         rewardImageLabel.setTitle(experiment.reward)

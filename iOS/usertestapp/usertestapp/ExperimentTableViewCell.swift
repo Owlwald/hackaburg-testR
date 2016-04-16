@@ -17,6 +17,10 @@ class ExperimentTableViewCell: UITableViewCell {
       // TitleLabel
     let titleLabel = BaseLabel(forAutoLayout: ())
     
+    // SpacerView
+    
+    let spacerView = UIView(forAutoLayout: ())
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLayout()
@@ -29,8 +33,15 @@ class ExperimentTableViewCell: UITableViewCell {
     func setupLayout() {
         self.addSubview(outerStackView)
         outerStackView.autoPinEdgesToSuperviewEdges()
+        outerStackView.layoutMarginsRelativeArrangement = true
+        outerStackView.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8)
         outerStackView.addArrangedSubview(titleLabel)
+        outerStackView.addArrangedSubview(spacerView)
         outerStackView.addArrangedSubview(detailStackView)
+        
+        spacerView.autoSetDimension(.Height, toSize: 2)
+        spacerView.backgroundColor = UIColor.navBarColor()
+        
         detailStackView.setupLayout()
         
                 outerStackView.spacing = 8
