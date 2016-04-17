@@ -14,7 +14,5 @@ class BaseNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationBar.barTintColor = UIColor.navBarColor()
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.navigationBar.titleTextAttributes = titleDict as?[String : AnyObject]
     }
 }
