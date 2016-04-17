@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Firebase
 import PromiseKit
 import Alamofire
 import SwiftyJSON
@@ -33,6 +32,20 @@ class FireBaseStore {
                 }
                 fulfill(items)
 
+            }
+        }
+    }
+    
+    func patchEmailForID(id:String, email: String) -> Promise<Void> {
+        return Promise<Void> { fulfill, reject in
+            let parameters = ["email" : email]
+            Alamofire.request(.PATCH, "https://testrhackaburg16.firebaseio.com/experiments/\(id).json", parameters: parameters, encoding: .JSON).validate().responseJSON {
+                response -> Void in
+                if response.result.isSuccess {
+                    fulfill()
+                } else {
+                    reject(response.result.error!)
+                }
             }
         }
     }
