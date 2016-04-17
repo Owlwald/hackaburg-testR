@@ -6,23 +6,23 @@ submit_button.addEventListener("click", onclick);
 
 function onclick() {
     //var usersRef = myFirebaseRef.child("experiments");
-    
+
     var name = document.querySelector("#input_name").value;
     var category = document.querySelector("#input_category").value;
     var duration = document.querySelector("#input_duration").value;
 
     var starttime = document.querySelector("#input_starttime").value;
-    
+
     var endtime = document.querySelector("#input_endtime").value;
-    
+
     var reward = document.querySelector("#input_reward").value;
-    
+
     var location = document.querySelector("#input_location").value;
-    
+
     var description = document.querySelector("#input_description").value;
-    
+
     var date = document.querySelector("#input_date").value;
-    
+
     myFirebaseRef.push({
         'name': name,
         'category':category,
@@ -36,8 +36,8 @@ function onclick() {
     });
 }
 
-var loginButton = document.querySelector("#login");
-loginButton.addEventListener("click",onclickk);
+// var loginButton = document.querySelector("#login");
+// loginButton.addEventListener("click",onclickk);
 
 function onclickk(){
     console.log("click");
@@ -49,6 +49,6 @@ function authHandler(error, authData) {
     console.log("Login Failed!", error);
   } else {
     console.log("Authenticated successfully with payload:", authData);
-    
+
   }
 }

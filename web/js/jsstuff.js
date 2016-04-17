@@ -15,36 +15,38 @@ var start = myFirebaseRef.child("Start");
 //     var items = [];
 //   console.log("The updated post title is " + changedPost);
 // });
-myFirebaseRef.orderByChild("starttime").on("value", function(snapshot) {
+myFirebaseRef.orderByChild("startdate").on("value", function(snapshot) {
   $('#experiments').html('');
   var data = snapshot.val();
 
   var items = [];
 if(data.length != 0){
+  $('#experiments').append('<div class="row rounded "');
   $.each(data, function(i, item) {
 
     console.log(item);
     var state;
     if(item.available){
       state = "bg-primary";
-
-  items.push('<div class="row '+state+'">');
-  items.push('<div class="col-sm-12"><h3><p id="name">'+item.name+'</p></h3></div>');
+  items.push('<div class="items col-sm-8 col-sm-offset-2 '+state+'">');
+  items.push('<div class="row items '+state+'">');
+  items.push('<div class="col-sm-8 "><h3><p id="name">'+item.name+'</p></h3></div>');
   items.push('<div class="col-sm-6"><dl class="dl-horizontal">');
   items.push('<dt class="duration"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </dt><dd>'+item.duration+' min</dd>');
   items.push('<dt class="category"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> </dt><dd>'+item.category+'</dd>');
   items.push('<dt class="reward"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span></dt><dd>'+item.reward+'</dd>');
   items.push('</dl></div>');
   items.push('<div class="col-sm-6"><dl  class="dl-horizontal">');
-  items.push('<dt class="time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> </dt><dd>'+item.starttime+" until "+item.endtime+'</dd>');
+  items.push('<dt class="time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> </dt><dd>'+item.startdate+" until "+item.enddate+'</dd>');
   items.push('<dt class="location"></span><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></dt><dd>'+item.location+'</dd>');
-  items.push('</dl></div></div>');
+  items.push('</dl></div></div></div>');
 }else{
   state = "bg-danger";
 }
   });
 
 $('#experiments').append( items.join('') );
+$('#experiments').append('</div>');
 }
 
 
