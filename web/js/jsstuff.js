@@ -80,7 +80,7 @@ $("#experiments").on('click','> *', function(e){
         console.log(mail);
             detailRef.child('email').set(mail);
             $('#myModal').modal('hide');
-      })
+      });
 
 
   });

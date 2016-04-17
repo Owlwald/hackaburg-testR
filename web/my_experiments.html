@@ -59,6 +59,32 @@
 
 
         </div>
+        <div class="modal fade" id="confModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="expName"></h4>
+
+              </div>
+              <div class="modal-body">
+                <h3>Are you sure?</h3>
+                <p id="description">
+                  If you confirm this action, you are disabling this experiment.<br/>
+                  You can always restart it again should you need to.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <form class="form-inline">
+
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" id="confirm" class="btn btn-primary">Confirm</button>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
 

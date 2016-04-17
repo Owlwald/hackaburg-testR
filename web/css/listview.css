@@ -10,6 +10,9 @@
   background-color: black;
 }
 
+.h3{
+  margin-top:0px!important;
+}
 .logo{
   font-family: 'Damion', cursive;
   color:white;
@@ -56,6 +59,16 @@ box-sizing: border-box;
 .lightblue{
   background-color: rgb(48, 86, 222);
   /*border-bottom: 1px solid rgb(154, 154, 154);*/
+}
+
+.brightred{
+  background-color: rgb(240, 0, 0);
+
+}
+
+.brightgreen{
+  background-color: rgb(59, 255, 0);
+
 }
 
 .list-h3{
