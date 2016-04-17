@@ -1,0 +1,50 @@
+PODS:
+  - Alamofire (3.3.1)
+  - Firebase (2.5.1)
+  - OMGHTTPURLRQ (3.1.1):
+    - OMGHTTPURLRQ/RQ (= 3.1.1)
+  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
+  - OMGHTTPURLRQ/RQ (3.1.1):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.1.1)
+  - PromiseKit (3.1.1):
+    - PromiseKit/Foundation (= 3.1.1)
+    - PromiseKit/QuartzCore (= 3.1.1)
+    - PromiseKit/UIKit (= 3.1.1)
+  - PromiseKit/CorePromise (3.1.1)
+  - PromiseKit/Foundation (3.1.1):
+    - OMGHTTPURLRQ (~> 3.1.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (3.1.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (3.1.1):
+    - PromiseKit/CorePromise
+  - PureLayout (3.0.1)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - Firebase (>= 2.5.1)
+  - PromiseKit
+  - PureLayout (from `https://github.com/PureLayout/PureLayout`)
+  - SwiftyJSON (~> 2.3.0)
+
+EXTERNAL SOURCES:
+  PureLayout:
+    :git: https://github.com/PureLayout/PureLayout
+
+CHECKOUT OPTIONS:
+  PureLayout:
+    :commit: 865e86a47d3f34a1561ce1f18b852ab4bb9ea732
+    :git: https://github.com/PureLayout/PureLayout
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
+  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
+  PromiseKit: 4e8127c22a9b29d1b44958ab2ec762ea6115cbfb
+  PureLayout: 3776d602389d93977b4a4431f1b5cb0e0eed2524
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0
