@@ -42,6 +42,7 @@ class ExperimentDetailView: UIView {
         outerStackView.spacing = 16
         
         titleLabel.font = UIFont(name: titleLabel.font!.fontName, size: 32)
+        titleLabel.numberOfLines = 2
         descriptionTextLabel.numberOfLines = 0
         detailStackView.setupLayout()
         
