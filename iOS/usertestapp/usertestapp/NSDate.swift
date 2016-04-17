@@ -16,13 +16,17 @@ extension NSDate {
     
     static func dateFromString(string: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-DD HH:mm"
+        dateFormatter.dateFormat = "y-MM-dd HH:mm"
         return dateFormatter.dateFromString(string)!
     }
     
     var displayFormat: String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm dd.MM"
+        dateFormatter.dateFormat = "HH:mm dd.MM.y"
         return dateFormatter.stringFromDate(self)
+    }
+    
+    func isInPast() -> Bool {
+        return self.earlierDate(NSDate()) == self
     }
 }
