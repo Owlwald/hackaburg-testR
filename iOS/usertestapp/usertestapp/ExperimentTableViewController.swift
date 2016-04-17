@@ -12,6 +12,7 @@ import UIKit
 class ExperimentTableViewController: UITableViewController {
 
     let viewModel: ExperimentsViewModel
+
     
     override init(style: UITableViewStyle) {
         viewModel = ExperimentsViewModel()
@@ -29,7 +30,7 @@ class ExperimentTableViewController: UITableViewController {
     func setupNavBarButtons() {
         let reloadButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(reload))
         let settingButton = UIBarButtonItem(image: UIImage(named: "icon_settings"), style: .Plain, target: self, action: #selector(settingsButtonPressed))
-        self.navigationItem.rightBarButtonItems = [settingButton, reloadButton]
+        self.navigationItem.rightBarButtonItems = [reloadButton, settingButton]
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -38,6 +39,10 @@ class ExperimentTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(reload), forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(self.refreshControl!)
         reload()
     }
     
@@ -64,8 +69,10 @@ class ExperimentTableViewController: UITableViewController {
     }
     
     func reload() {
-        viewModel.loadData().then { _ in
+        self.refreshControl?.beginRefreshing()
+        viewModel.loadData().then { _ -> Void in
             self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
         }
     }
     
