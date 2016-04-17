@@ -34,6 +34,7 @@ class ExperimentsViewModel {
     func loadData() -> Promise<Void>{
         return store.getExperiments().then { items -> Void in
             self.items = items
+            self.items = self.items.filter { $0.available }
             switch self.filterOption{
             case .All:
                 break
