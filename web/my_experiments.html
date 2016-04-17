@@ -24,9 +24,14 @@
 
 <body>
     <div class="container-fluid">
+      <div id="top-img" class="row">
 
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
+      </div>
+      <div class="overlay">
+        <h1 class="logo text-center">testR</h1>
+      </div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid bg-primary">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
@@ -34,18 +39,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Testr</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="./index.html">All Experiments</a></li>
                         <li class="active"><a href="#">My Experiments</a></li>
-
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
 
                         <li id="login"><a href="./create_experiment.html">New Experiment</a></li>
-
+                          <li id="logout"><a href="#"> Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -55,6 +58,32 @@
 
 
 
+        </div>
+        <div class="modal fade" id="confModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="expName"></h4>
+
+              </div>
+              <div class="modal-body">
+                <h3>Are you sure?</h3>
+                <p id="description">
+                  If you confirm this action, you are disabling this experiment.<br/>
+                  You can always restart it again should you need to.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <form class="form-inline">
+
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" id="confirm" class="btn btn-primary">Confirm</button>
+                </form>
+
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 

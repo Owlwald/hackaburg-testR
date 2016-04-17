@@ -65,6 +65,9 @@ $("#experiments").on('click','> *', function(e){
 
   var detailRef = new Firebase("https://testrhackaburg16.firebaseio.com/experiments/"+found);
   detailRef.on("value", function(snapshot) {
+
+
+
     // $('#experiments').html('');
     var detaildata = snapshot.val();
     console.log("detail",detaildata);
@@ -72,24 +75,13 @@ $("#experiments").on('click','> *', function(e){
       $('#expName').text(detaildata.name);
       $('#description').text(detaildata.description);
 
+      $('#attend').on('click',function(){
+        var mail =  $('#email').val();
+        console.log(mail);
+            detailRef.child('email').set(mail);
+            $('#myModal').modal('hide');
+      });
 
-    // var state = 'bg-primary';
-    // var items = [];
-    //
-    // items.push('<div id="" class="items col-sm-8 col-sm-offset-2 '+state+'">');
-    // items.push('<div class="row items '+state+'">');
-    // items.push('<div class="col-sm-8 "><h3><p id="name">'+detaildata.name+'</p></h3></div>');
-    // items.push('<div class="col-sm-6"><dl class="dl-horizontal">');
-    // items.push('<dt class="duration"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </dt><dd>'+detaildata.duration+' min</dd>');
-    // items.push('<dt class="category"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> </dt><dd>'+detaildata.category+'</dd>');
-    // items.push('<dt class="reward"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span></dt><dd>'+detaildata.reward+'</dd>');
-    // items.push('</dl></div>');
-    // items.push('<div class="col-sm-6"><dl  class="dl-horizontal">');
-    // items.push('<dt class="time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> </dt><dd>'+detaildata.startdate+" until "+detaildata.enddate+'</dd>');
-    // items.push('<dt class="location"></span><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></dt><dd>'+detaildata.location+'</dd>');
-    // items.push('</dl></div></div></div>');
-    // $('#experiments').append( items.join('') );
-    // $('#experiments').append('</div>');
 
   });
 

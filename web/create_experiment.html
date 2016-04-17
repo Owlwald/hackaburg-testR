@@ -8,6 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+      <link rel="stylesheet" href="./css/listview.css">
     <title>Experiment erstellen</title>
 
     <!-- Bootstrap -->
@@ -24,9 +25,14 @@
 
 <body>
     <div class="container-fluid">
+      <div id="top-img" class="row">
 
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
+      </div>
+      <div class="overlay">
+        <h1 class="logo text-center">testR</h1>
+      </div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid bg-primary">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
@@ -34,119 +40,122 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Testr</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="./index.html">All Experiments</a></li>
-                        <li id="logind"><a href="#">My Experiments</a></li>
-
+                        <li id="logind"><a href="./my_experiments.html">My Experiments</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#">New Experiment</a></li>
-
+                          <li id="logout"><a href="#"> Logout</a></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
             </div>
             <!--/.container-fluid -->
         </nav>
-        <form class="form-horizontal">
-            <fieldset>
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <form class="form-horizontal">
+                <fieldset>
 
-                <!-- Form Name -->
-                <legend>Create experiment</legend>
+                    <!-- Form Name -->
+                    <legend>Create experiment</legend>
 
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="input_name"></label>
-                    <div class="col-md-4">
-                        <input id="input_name" name="input_name" type="text" placeholder="Name" class="form-control input-md" required="">
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input_name"></label>
+                        <div class="col-md-12">
+                            <input id="input_name" name="input_name" type="text" placeholder="Name" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="input_date"></label>
-                    <div class="col-md-4">
-                        <input id="input_date" name="input_date" type="date" placeholder="Name" class="form-control input-md" required="">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input_date"></label>
+                        <div class="col-md-12">
+                            <input id="input_date" name="input_date" type="date" placeholder="Name" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="input_category"></label>
-                    <div class="col-md-4">
-                        <select id="input_category" name="input_category" class="form-control">
-                            <option value="">Select a category</option>
-                            <option value="Eyetracking">Eyetracking</option>
-                            <option value="Technology">Technology</option>
-                            <option value="Psychology">Psychology</option>
-                            <option value="User Test">User Test</option>
-                        </select>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input_category"></label>
+                        <div class="col-md-12">
+                            <select id="input_category" name="input_category" class="form-control">
+                                <option value="">Select a category</option>
+                                <option value="Eyetracking">Eyetracking</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Psychology">Psychology</option>
+                                <option value="User Test">User Test</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="input_duration"></label>
-                    <div class="col-md-4">
-                        <input id="input_duration" name="input_duration" type="number" placeholder="Duration in minutes" class="form-control input-md" required="">
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input_duration"></label>
+                        <div class="col-md-12">
+                            <input id="input_duration" name="input_duration" type="number" placeholder="Duration in minutes" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
 
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="input_time"></label>
-                    <div class="col-md-4">
-                        <input id="input_starttime" name="input_starttime" type="time" placeholder="Start time" class="form-control input-md" required="">
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input_time"></label>
+                        <div class="col-md-12">
+                            <input id="input_starttime" name="input_starttime" type="time" placeholder="Start time" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="input_time"></label>
-                    <div class="col-md-4">
-                        <input id="input_endtime" name="input_endtime" type="time" placeholder="End time" class="form-control input-md" required="">
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input_time"></label>
+                        <div class="col-md-12">
+                            <input id="input_endtime" name="input_endtime" type="time" placeholder="End time" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="input_reward"></label>
-                    <div class="col-md-4">
-                        <input id="input_reward" name="input_reward" type="text" placeholder="Reward" class="form-control input-md">
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input_reward"></label>
+                        <div class="col-md-12">
+                            <input id="input_reward" name="input_reward" type="text" placeholder="Reward" class="form-control input-md">
 
+                        </div>
                     </div>
-                </div>
 
 
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="input_location"></label>
-                    <div class="col-md-4">
-                        <input id="input_location" name="input_location" type="text" placeholder="Location" class="form-control input-md" required="">
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input_location"></label>
+                        <div class="col-md-12">
+                            <input id="input_location" name="input_location" type="text" placeholder="Location" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
 
 
-                
 
-                <!-- Textarea -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="input_description"></label>
-                    <div class="col-md-4">
-                        <textarea class="form-control" id="input_description" placeholder="Add a description..." name="input_description"></textarea>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="input_description"></label>
+                        <div class="col-md-12">
+                            <textarea class="form-control" id="input_description" placeholder="Add a description..." name="input_description"></textarea>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="singlebutton"></label>
-                    <div class="col-md-4">
-                        <button name="singlebutton" class="btn btn-primary" id="submit_button">Submit</button>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="singlebutton"></label>
+                        <div class="col-md-12">
+                            <button name="singlebutton" class="btn btn-primary" id="submit_button">Submit</button>
+                        </div>
                     </div>
-                </div>
-            </fieldset>
-        </form>
+                </fieldset>
+            </form>
+          </div>
+        </div>
+
 
 
 
