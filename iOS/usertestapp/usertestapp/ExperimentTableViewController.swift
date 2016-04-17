@@ -54,7 +54,6 @@ class ExperimentTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("default") as! ExperimentTableViewCell
         
         let experiment = viewModel.itemAtIndex(indexPath.row)
-        print(experiment)
         cell.setExperiment(experiment)
         
         return cell

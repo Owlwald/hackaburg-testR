@@ -22,7 +22,7 @@ extension NSDate {
     
     var displayFormat: String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateFormat = "HH:mm dd.MM"
         return dateFormatter.stringFromDate(self)
     }
 }

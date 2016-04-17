@@ -24,10 +24,13 @@ class ExperimentsViewModel {
     }
     
     func loadData() -> Promise<Void>{
-        return store.getExperiments().then { items in
+        return store.getExperiments().then { items -> Void in
             self.items = items
+            self.items.sortInPlace { $0.startDate.earlierDate($1.startDate) == $0.startDate }
         }
     }
+    
+    
     
     func itemAtIndex(index: Int) -> Experiment {
         return items[index]
