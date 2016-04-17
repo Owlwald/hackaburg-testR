@@ -44,17 +44,41 @@ class ExperimentDetailViewController: UIViewController {
         }
         
         let confirmAction = UIAlertAction(title: "Confirm", style: .Cancel) { UIAlertAction in
-            let store = FireBaseStore.sharedInstance
-            store.patchEmailForID(self.experiment.id, email: self.searchTextField!.text!).then { _ -> Void in
-                
-            }.error { _ in
-            
+            if let searchFieldInput = self.searchTextField?.text {
+                if searchFieldInput.validateStringAsEmail() {
+                    let store = FireBaseStore.sharedInstance
+                    store.patchEmailForID(self.experiment.id, email: self.searchTextField!.text!).then { _ -> Void in
+                            self.showFeedbackSuccess()
+                        }.error { _ in
+                            self.showFeedbackFailure()
+                    }
+                } else {
+                    self.actionButtonPressed()
+                }
             }
+
         }
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .Destructive, handler: nil)
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
         presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    
+    func showFeedbackSuccess() {
+        let alertController = UIAlertController(title: "Success!", message: "Your request was successful", preferredStyle: .Alert)
+        let okAktion = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAktion)
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func showFeedbackFailure() {
+        let alertController = UIAlertController(title: "Error!", message: "Ops! Something went wrong! Try Again!", preferredStyle: .Alert)
+        let okAktion = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAktion)
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     
 }
