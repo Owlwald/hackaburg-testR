@@ -29,4 +29,13 @@ extension NSDate {
     func isInPast() -> Bool {
         return self.earlierDate(NSDate()) == self
     }
+    
+    func isToday() -> Bool {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "y-MM-dd"
+        
+        let selfAsString = dateFormatter.stringFromDate(self)
+        let nowAsString = dateFormatter.stringFromDate(NSDate())
+        return selfAsString == nowAsString
+    }
 }

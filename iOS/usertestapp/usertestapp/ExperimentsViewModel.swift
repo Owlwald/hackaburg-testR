@@ -16,7 +16,8 @@ class ExperimentsViewModel {
     enum FilterOption {
         case
             All,
-            Upcoming
+            Upcoming,
+            Today
     }
     
     var items: [Experiment]
@@ -33,8 +34,15 @@ class ExperimentsViewModel {
     func loadData() -> Promise<Void>{
         return store.getExperiments().then { items -> Void in
             self.items = items
-            if self.filterOption == .Upcoming {
+            switch self.filterOption{
+            case .All:
+                break
+            case .Upcoming:
                 self.items = self.items.filter { !$0.startDate.isInPast() }
+                break
+            case .Today:
+                self.items = self.items.filter { $0.startDate.isToday() }
+                break
             }
             self.items.sortInPlace { $0.startDate.earlierDate($1.startDate) == $0.startDate }
         }

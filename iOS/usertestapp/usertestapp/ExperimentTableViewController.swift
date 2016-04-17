@@ -47,12 +47,17 @@ class ExperimentTableViewController: UITableViewController {
             self.viewModel.filterOption = .All
             self.reload()
         }
+        let todayAction = UIAlertAction(title: "Show today", style: .Default) { UIAlertAction -> Void in
+            self.viewModel.filterOption = .Today
+            self.reload()
+        }
         let upcomingAction = UIAlertAction(title: "Show upcoming", style: .Default) { UIAlertAction -> Void in
             self.viewModel.filterOption = .Upcoming
             self.reload()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Destructive, handler: nil)
         alertController.addAction(allAction)
+        alertController.addAction(todayAction)
         alertController.addAction(upcomingAction)
         alertController.addAction(cancelAction)
         self.presentViewController(alertController, animated: true, completion: nil)
