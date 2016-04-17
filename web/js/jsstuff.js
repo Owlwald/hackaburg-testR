@@ -23,7 +23,9 @@ if(data.length != 0){
     items.push('<dt class="reward"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span></dt><dd>'+item.reward+'</dd>');
     items.push('</dl></div>');
     items.push('<div class="col-sm-6"><dl  class="dl-horizontal">');
-    items.push('<dt class="time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> </dt><dd>'+item.startdate+" until "+item.enddate+'</dd>');
+    items.push('<dt class="time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> </dt><dd>'+item.startdate+'</dd>');
+    items.push('<dt class="time"><span class="glyphicon " aria-hidden="true"></span> </dt><dd>'+item.enddate+'</dd>');
+
     items.push('<dt class="location"></span><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></dt><dd>'+item.location+'</dd>');
     items.push('</dl></div></div></div>');
     cnt++;

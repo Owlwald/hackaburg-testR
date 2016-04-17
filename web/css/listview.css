@@ -42,8 +42,8 @@ box-sizing: border-box;
   display: block;
   height: 50px;
   width: 100%;
-  margin-bottom: 0px !important;
-  margin-top: 4px;
+  margin-bottom: 1px !important;
+  margin-top: 1px;
   padding-top: 13px;
 }
 
@@ -55,4 +55,20 @@ box-sizing: border-box;
 .items .col-sm-6{
   background-color: rgb(231, 240, 255);
 
+}
+
+.dl-horizontal{
+  margin-top: 10px;
+}
+
+.dl-horizontal dd{
+  margin-left: 0px !important;
+}
+.dl-horizontal dt{
+  width: 50px !important;
+  margin-right: 15px;
+}
+
+.dd, .dt{
+  padding: 3px !important;
 }
