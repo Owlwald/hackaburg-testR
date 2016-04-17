@@ -45,8 +45,8 @@ class ExperimentDetailView: UIView {
         descriptionTextLabel.numberOfLines = 0
         detailStackView.setupLayout()
         
-        actionButton.backgroundColor = UIColor.greenColor()
-        actionButton.setTitle("Participate", forState: .Normal)
+        
+        actionButton.setImage(UIImage(named: "button_participate"), forState: .Normal)
     }
     
     func setExperiment(experiment: Experiment) {
