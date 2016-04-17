@@ -13,8 +13,15 @@ import PromiseKit
 
 class ExperimentsViewModel {
     
+    enum FilterOption {
+        case
+            All,
+            Upcoming
+    }
+    
     var items: [Experiment]
     let store = FireBaseStore.sharedInstance
+    var filterOption: FilterOption = .All
     
     var experimentsRef: Firebase?
     
@@ -26,7 +33,9 @@ class ExperimentsViewModel {
     func loadData() -> Promise<Void>{
         return store.getExperiments().then { items -> Void in
             self.items = items
-            self.items = self.items.filter { !$0.startDate.isInPast() }
+            if self.filterOption == .Upcoming {
+                self.items = self.items.filter { !$0.startDate.isInPast() }
+            }
             self.items.sortInPlace { $0.startDate.earlierDate($1.startDate) == $0.startDate }
         }
     }
