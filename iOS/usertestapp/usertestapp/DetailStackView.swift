@@ -91,7 +91,7 @@ class DetailStackView: UIView {
         typeImageLabel.setTitle(experiment.type)
         timeImageLabel.setTitle(experiment.startDate.displayFormat)
         locationImageLabel.setTitle(experiment.location)
-        durationImageLabel.setTitle("\(experiment.duration)")
+        durationImageLabel.setTitle("\(experiment.duration) min")
         rewardImageLabel.setTitle(experiment.reward)
         
 

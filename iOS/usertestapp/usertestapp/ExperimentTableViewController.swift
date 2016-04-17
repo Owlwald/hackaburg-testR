@@ -28,7 +28,8 @@ class ExperimentTableViewController: UITableViewController {
     
     func setupNavBarButtons() {
         let reloadButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(reload))
-        self.navigationItem.rightBarButtonItems = [reloadButton]
+        let settingButton = UIBarButtonItem(image: UIImage(named: "icon_settings"), style: .Plain, target: self, action: #selector(settingsButtonPressed))
+        self.navigationItem.rightBarButtonItems = [settingButton, reloadButton]
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -38,6 +39,28 @@ class ExperimentTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         reload()
+    }
+    
+    func settingsButtonPressed() {
+        let alertController = UIAlertController(title: "Settings", message: "Filter results", preferredStyle: .ActionSheet)
+        let allAction = UIAlertAction(title: "Show all", style: .Default) { UIAlertAction -> Void in
+            self.viewModel.filterOption = .All
+            self.reload()
+        }
+        let todayAction = UIAlertAction(title: "Show today", style: .Default) { UIAlertAction -> Void in
+            self.viewModel.filterOption = .Today
+            self.reload()
+        }
+        let upcomingAction = UIAlertAction(title: "Show upcoming", style: .Default) { UIAlertAction -> Void in
+            self.viewModel.filterOption = .Upcoming
+            self.reload()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Destructive, handler: nil)
+        alertController.addAction(allAction)
+        alertController.addAction(todayAction)
+        alertController.addAction(upcomingAction)
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func reload() {

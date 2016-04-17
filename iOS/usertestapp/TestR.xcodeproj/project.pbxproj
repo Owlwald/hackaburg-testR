@@ -51,14 +51,14 @@
 
 /* Begin PBXFileReference section */
 		25110EC863BFA0A193760E08 /* Pods_usertestapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_usertestapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B4826DA1CC260130088FAA5 /* usertestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = usertestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4826DA1CC260130088FAA5 /* TestR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4826DD1CC260130088FAA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B4826E61CC260130088FAA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B4826EB1CC260130088FAA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B4826F01CC260130088FAA5 /* usertestappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usertestappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4826F01CC260130088FAA5 /* TestR.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestR.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4826F41CC260130088FAA5 /* usertestappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usertestappTests.swift; sourceTree = "<group>"; };
 		2B4826F61CC260130088FAA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B4826FB1CC260130088FAA5 /* usertestappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usertestappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4826FB1CC260130088FAA5 /* TestR.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestR.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4826FF1CC260130088FAA5 /* usertestappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usertestappUITests.swift; sourceTree = "<group>"; };
 		2B4827011CC260130088FAA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B4827151CC27D170088FAA5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -133,9 +133,9 @@
 		2B4826DB1CC260130088FAA5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B4826DA1CC260130088FAA5 /* usertestapp.app */,
-				2B4826F01CC260130088FAA5 /* usertestappTests.xctest */,
-				2B4826FB1CC260130088FAA5 /* usertestappUITests.xctest */,
+				2B4826DA1CC260130088FAA5 /* TestR.app */,
+				2B4826F01CC260130088FAA5 /* TestR.xctest */,
+				2B4826FB1CC260130088FAA5 /* TestR.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,9 +269,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B4826D91CC260130088FAA5 /* usertestapp */ = {
+		2B4826D91CC260130088FAA5 /* TestR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B4827041CC260130088FAA5 /* Build configuration list for PBXNativeTarget "usertestapp" */;
+			buildConfigurationList = 2B4827041CC260130088FAA5 /* Build configuration list for PBXNativeTarget "TestR" */;
 			buildPhases = (
 				AC549D369BFFE270D7F0D811 /* Check Pods Manifest.lock */,
 				2B4826D61CC260130088FAA5 /* Sources */,
@@ -284,14 +284,14 @@
 			);
 			dependencies = (
 			);
-			name = usertestapp;
+			name = TestR;
 			productName = usertestapp;
-			productReference = 2B4826DA1CC260130088FAA5 /* usertestapp.app */;
+			productReference = 2B4826DA1CC260130088FAA5 /* TestR.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2B4826EF1CC260130088FAA5 /* usertestappTests */ = {
+		2B4826EF1CC260130088FAA5 /* TestRTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B4827071CC260130088FAA5 /* Build configuration list for PBXNativeTarget "usertestappTests" */;
+			buildConfigurationList = 2B4827071CC260130088FAA5 /* Build configuration list for PBXNativeTarget "TestRTests" */;
 			buildPhases = (
 				2B4826EC1CC260130088FAA5 /* Sources */,
 				2B4826ED1CC260130088FAA5 /* Frameworks */,
@@ -302,14 +302,14 @@
 			dependencies = (
 				2B4826F21CC260130088FAA5 /* PBXTargetDependency */,
 			);
-			name = usertestappTests;
+			name = TestRTests;
 			productName = usertestappTests;
-			productReference = 2B4826F01CC260130088FAA5 /* usertestappTests.xctest */;
+			productReference = 2B4826F01CC260130088FAA5 /* TestR.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2B4826FA1CC260130088FAA5 /* usertestappUITests */ = {
+		2B4826FA1CC260130088FAA5 /* TestRUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B48270A1CC260130088FAA5 /* Build configuration list for PBXNativeTarget "usertestappUITests" */;
+			buildConfigurationList = 2B48270A1CC260130088FAA5 /* Build configuration list for PBXNativeTarget "TestRUITests" */;
 			buildPhases = (
 				2B4826F71CC260130088FAA5 /* Sources */,
 				2B4826F81CC260130088FAA5 /* Frameworks */,
@@ -320,9 +320,9 @@
 			dependencies = (
 				2B4826FD1CC260130088FAA5 /* PBXTargetDependency */,
 			);
-			name = usertestappUITests;
+			name = TestRUITests;
 			productName = usertestappUITests;
-			productReference = 2B4826FB1CC260130088FAA5 /* usertestappUITests.xctest */;
+			productReference = 2B4826FB1CC260130088FAA5 /* TestR.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -348,7 +348,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2B4826D51CC260130088FAA5 /* Build configuration list for PBXProject "usertestapp" */;
+			buildConfigurationList = 2B4826D51CC260130088FAA5 /* Build configuration list for PBXProject "TestR" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -361,9 +361,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B4826D91CC260130088FAA5 /* usertestapp */,
-				2B4826EF1CC260130088FAA5 /* usertestappTests */,
-				2B4826FA1CC260130088FAA5 /* usertestappUITests */,
+				2B4826D91CC260130088FAA5 /* TestR */,
+				2B4826EF1CC260130088FAA5 /* TestRTests */,
+				2B4826FA1CC260130088FAA5 /* TestRUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -489,12 +489,12 @@
 /* Begin PBXTargetDependency section */
 		2B4826F21CC260130088FAA5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2B4826D91CC260130088FAA5 /* usertestapp */;
+			target = 2B4826D91CC260130088FAA5 /* TestR */;
 			targetProxy = 2B4826F11CC260130088FAA5 /* PBXContainerItemProxy */;
 		};
 		2B4826FD1CC260130088FAA5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2B4826D91CC260130088FAA5 /* usertestapp */;
+			target = 2B4826D91CC260130088FAA5 /* TestR */;
 			targetProxy = 2B4826FC1CC260130088FAA5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -591,8 +591,7 @@
 				INFOPLIST_FILE = usertestapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackaburg2016.usertestapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_NAME = TestR;
 			};
 			name = Debug;
 		};
@@ -604,8 +603,7 @@
 				INFOPLIST_FILE = usertestapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackaburg2016.usertestapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_NAME = TestR;
 			};
 			name = Release;
 		};
@@ -616,8 +614,8 @@
 				INFOPLIST_FILE = usertestappTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackaburg2016.usertestappTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/usertestapp.app/usertestapp";
+				PRODUCT_NAME = TestR;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestR.app/TestR";
 			};
 			name = Debug;
 		};
@@ -628,8 +626,8 @@
 				INFOPLIST_FILE = usertestappTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackaburg2016.usertestappTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/usertestapp.app/usertestapp";
+				PRODUCT_NAME = TestR;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestR.app/TestR";
 			};
 			name = Release;
 		};
@@ -639,7 +637,7 @@
 				INFOPLIST_FILE = usertestappUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackaburg2016.usertestappUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TestR;
 				TEST_TARGET_NAME = usertestapp;
 			};
 			name = Debug;
@@ -650,7 +648,7 @@
 				INFOPLIST_FILE = usertestappUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hackaburg2016.usertestappUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TestR;
 				TEST_TARGET_NAME = usertestapp;
 			};
 			name = Release;
@@ -658,7 +656,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B4826D51CC260130088FAA5 /* Build configuration list for PBXProject "usertestapp" */ = {
+		2B4826D51CC260130088FAA5 /* Build configuration list for PBXProject "TestR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B4827021CC260130088FAA5 /* Debug */,
@@ -667,7 +665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B4827041CC260130088FAA5 /* Build configuration list for PBXNativeTarget "usertestapp" */ = {
+		2B4827041CC260130088FAA5 /* Build configuration list for PBXNativeTarget "TestR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B4827051CC260130088FAA5 /* Debug */,
@@ -676,7 +674,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B4827071CC260130088FAA5 /* Build configuration list for PBXNativeTarget "usertestappTests" */ = {
+		2B4827071CC260130088FAA5 /* Build configuration list for PBXNativeTarget "TestRTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B4827081CC260130088FAA5 /* Debug */,
@@ -685,7 +683,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B48270A1CC260130088FAA5 /* Build configuration list for PBXNativeTarget "usertestappUITests" */ = {
+		2B48270A1CC260130088FAA5 /* Build configuration list for PBXNativeTarget "TestRUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B48270B1CC260130088FAA5 /* Debug */,
