@@ -37,13 +37,13 @@ class ExperimentDetailViewController: UIViewController {
     
     func actionButtonPressed() {
         let alertController = UIAlertController(title: "Contact information required", message: "Please enter a valid email", preferredStyle: .Alert)
-        
+        alertController.view.tintColor = UIColor.navBarColor()
         alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
             self.searchTextField = textField
             self.searchTextField?.placeholder = "Enter your email"
         }
         
-        let confirmAction = UIAlertAction(title: "Confirm", style: .Default) { UIAlertAction in
+        let confirmAction = UIAlertAction(title: "Confirm", style: .Cancel) { UIAlertAction in
             let store = FireBaseStore.sharedInstance
             store.patchEmailForID(self.experiment.id, email: self.searchTextField!.text!).then { _ -> Void in
                 
@@ -51,7 +51,9 @@ class ExperimentDetailViewController: UIViewController {
             
             }
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Destructive, handler: nil)
         alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
         presentViewController(alertController, animated: true, completion: nil)
     }
     

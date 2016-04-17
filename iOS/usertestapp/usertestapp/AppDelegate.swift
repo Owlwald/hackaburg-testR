@@ -15,13 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         // Override point for customization after application launch.
         self.window = UIWindow(frame:UIScreen.mainScreen().bounds)
 
         let vc = ExperimentTableViewController(style: .Plain)
               let nvc = BaseNavigationController(rootViewController: vc)
         self.window!.rootViewController = nvc
-        self.window!.tintColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         
 
