@@ -43,3 +43,9 @@ function authHandler(error, authData) {
     location.href="./create_experiment.html"
   }
 }
+
+$('#logout').on('click',function(){
+  if(authData){
+    myFirebaseRef.unauth(); 
+  }
+})

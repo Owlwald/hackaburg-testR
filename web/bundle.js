@@ -44,10 +44,24 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Firebase = __webpack_require__(1);
+	__webpack_require__(1);
+	module.exports = __webpack_require__(3);
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Firebase = __webpack_require__(2);
 	var myFirebaseRef = new Firebase("https://testrhackaburg16.firebaseio.com/experiments");
-	var data;
-	myFirebaseRef.orderByChild("unixtime").on("value", function(snapshot) {
+
+	var myFirebaseRefUser = new Firebase("https://testrhackaburg16.firebaseio.com");
+	var authData = myFirebaseRefUser.getAuth();
+	var d = Date.now();
+
+	console.log(authData);
+
+	myFirebaseRef.orderByChild('unixtime').startAt(d).on("value", function (snapshot) {
 	  $('#experiments').html('');
 	   data = snapshot.val();
 	   console.log("data",data);
@@ -55,10 +69,15 @@
 	if(data.length != 0){
 	  $('#experiments').append('<div class="row"');
 	  $.each(data, function(i, item) {
+	    console.log("uuid",item.uuid);
+	    console.log("auth",authData.uid);
+	    if(item.uuid === authData.uid){
+
 	  var prev;
 
 	  var state;
 	  if(item.available){
+	      console.log("hurray?");
 	    state = "lightblue";
 	    items.push('<div id="'+cnt+'" class="items rounded col-sm-8 col-sm-offset-2 '+state+'">');
 	    items.push('<div class="row items">');
@@ -79,10 +98,11 @@
 	}else{
 	  state = "bg-danger";
 	}
+	}
 	  });
 
-	$('#experiments').append( items.join('') );
-	$('#experiments').append('</div>');
+	$('#my_experiments').append( items.join('') );
+	$('#my_experiments').append('</div>');
 
 	}
 
@@ -91,7 +111,7 @@
 	});
 
 
-	$("#experiments").on('click','> *', function(e){
+	$("#my_experiments").on('click','> *', function(e){
 
 	    var clicked = $(this).attr('id');
 	    console.log(clicked);
@@ -105,45 +125,69 @@
 	       found = key;
 	       counter++;
 	  }
-
-
-	  console.log("key",found);
-
-	  var detailRef = new Firebase("https://testrhackaburg16.firebaseio.com/experiments/"+found);
-	  detailRef.on("value", function(snapshot) {
-	    // $('#experiments').html('');
-	    var detaildata = snapshot.val();
-	    console.log("detail",detaildata);
-	      $('#myModal').modal('show');
-	      $('#expName').text(detaildata.name);
-	      $('#description').text(detaildata.description);
-
-
-	    // var state = 'bg-primary';
-	    // var items = [];
-	    //
-	    // items.push('<div id="" class="items col-sm-8 col-sm-offset-2 '+state+'">');
-	    // items.push('<div class="row items '+state+'">');
-	    // items.push('<div class="col-sm-8 "><h3><p id="name">'+detaildata.name+'</p></h3></div>');
-	    // items.push('<div class="col-sm-6"><dl class="dl-horizontal">');
-	    // items.push('<dt class="duration"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </dt><dd>'+detaildata.duration+' min</dd>');
-	    // items.push('<dt class="category"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> </dt><dd>'+detaildata.category+'</dd>');
-	    // items.push('<dt class="reward"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span></dt><dd>'+detaildata.reward+'</dd>');
-	    // items.push('</dl></div>');
-	    // items.push('<div class="col-sm-6"><dl  class="dl-horizontal">');
-	    // items.push('<dt class="time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> </dt><dd>'+detaildata.startdate+" until "+detaildata.enddate+'</dd>');
-	    // items.push('<dt class="location"></span><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></dt><dd>'+detaildata.location+'</dd>');
-	    // items.push('</dl></div></div></div>');
-	    // $('#experiments').append( items.join('') );
-	    // $('#experiments').append('</div>');
-
-	  });
-
+	  console.log(found);
 	});
 
 
+
+	  // console.log("key",found);
+
+	  // var detailRef = new Firebase("https://testrhackaburg16.firebaseio.com/experiments/"+found);
+	  // detailRef.on("value", function(snapshot) {
+	  //   detailRef.child('email').set(email);
+	  // }
+	//     // $('#experiments').html('');
+	//     var detaildata = snapshot.val();
+	//     console.log("detail",detaildata);
+	//       $('#myModal').modal('show');
+	//       $('#expName').text(detaildata.name);
+	//       $('#description').text(detaildata.description);
+
+	    //
+	    // $('#experiments').html('');
+	    // var data = snapshot.val();
+	    // console.log(data);
+	    // var items = [];
+	    // var cnt = 0;
+	    // if (data.length != 0) {
+	    //     $.each(data, function (i, item) {
+	    //
+	    //         console.log(item.uuid);
+	    //         var state;
+	    //
+	    //         if (item.available && item.uuid === authData.uid) {
+	    //             state = "bg-primary";
+	    //
+	    //             items.push('<div class="row '+ state + '>');
+	    //             items.push('<div class="col-sm-12"><h3><p id="name">' + item.name + '</p></h3></div>');
+	    //             items.push('<div class="col-sm-6"><dl class="dl-horizontal">');
+	    //             items.push('<dt class="duration"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </dt><dd>' + item.duration + ' min</dd>');
+	    //             items.push('<dt class="category"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> </dt><dd>' + item.category + '</dd>');
+	    //             items.push('<dt class="reward"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span></dt><dd>' + item.reward + '</dd>');
+	    //             items.push('</dl></div>');
+	    //             items.push('<div class="col-sm-6"><dl  class="dl-horizontal">');
+	    //             items.push('<dt class="time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> </dt><dd>' + item.startdate + " until " + item.enddate + '</dd>');
+	    //             items.push('<dt class="location"></span><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></dt><dd>' + item.location + '</dd>');
+	    //             items.push('</dl></div></div>');
+	    //             cnt++;
+	    //         } else {
+	    //             state = "bg-danger";
+	    //         }
+	    //     });
+	    //     console.log(items);
+	    //
+	    //     $('#my_experiments').append(items.join(''));
+	    // }
+	//
+	//
+	//
+	// }, function (errorObject) {
+	//     console.log("The read failed: " + errorObject.code);
+	// });
+
+
 /***/ },
-/* 1 */
+/* 2 */
 /***/ function(module, exports) {
 
 	/*! @license Firebase v2.4.2
@@ -426,6 +470,100 @@
 	X.prototype.Ze=function(a,b){D("Firebase.resetPassword",1,2,arguments.length);sg("Firebase.resetPassword",1,a,!1);tg("Firebase.resetPassword",a,"email");F("Firebase.resetPassword",2,b,!0);var c=new B;this.k.O.Ze(a,C(c,b));return c.D};X.prototype.resetPassword=X.prototype.Ze;})();
 
 	module.exports = Firebase;
+
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Firebase = __webpack_require__(2);
+	var myFirebaseRef = new Firebase("https://testrhackaburg16.firebaseio.com/experiments");
+	var data;
+	myFirebaseRef.orderByChild("unixtime").on("value", function(snapshot) {
+	  $('#experiments').html('');
+	   data = snapshot.val();
+	   console.log("data",data);
+	  var items = [],cnt = 0;
+	if(data.length != 0){
+	  $('#experiments').append('<div class="row"');
+	  $.each(data, function(i, item) {
+	  var prev;
+
+	  var state;
+	  if(item.available){
+	    state = "lightblue";
+	    items.push('<div id="'+cnt+'" class="items rounded col-sm-8 col-sm-offset-2 '+state+'">');
+	    items.push('<div class="row items">');
+	    items.push('<div class="col-sm-12 "><h3 class="list-h3"><p id="name">'+item.name+'</p></h3></div>');
+	    items.push('<div class="col-sm-6"><dl class="dl-horizontal">');
+	    items.push('<dt class="duration"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </dt><dd>'+item.duration+' min</dd>');
+	    items.push('<dt class="category"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> </dt><dd>'+item.category+'</dd>');
+	    items.push('<dt class="reward"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span></dt><dd>'+item.reward+'</dd>');
+	    items.push('</dl></div>');
+	    items.push('<div class="col-sm-6"><dl  class="dl-horizontal">');
+	    items.push('<dt class="time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> </dt><dd>'+item.startdate+'</dd>');
+	    items.push('<dt class="time"><span class="glyphicon " aria-hidden="true"></span> </dt><dd>'+item.enddate+'</dd>');
+
+	    items.push('<dt class="location"></span><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></dt><dd>'+item.location+'</dd>');
+	    items.push('</dl></div></div></div>');
+	    cnt++;
+
+	}else{
+	  state = "bg-danger";
+	}
+	  });
+
+	$('#experiments').append( items.join('') );
+	$('#experiments').append('</div>');
+
+	}
+
+	}, function (errorObject) {
+	  console.log("The read failed: " + errorObject.code);
+	});
+
+
+	$("#experiments").on('click','> *', function(e){
+
+	    var clicked = $(this).attr('id');
+	    console.log(clicked);
+	    var counter = 0;
+	    var found;
+	    for (var key in data) {
+	      if(counter == clicked){
+	         found = key;
+	        break;
+	      }
+	       found = key;
+	       counter++;
+	  }
+
+
+	  console.log("key",found);
+
+	  var detailRef = new Firebase("https://testrhackaburg16.firebaseio.com/experiments/"+found);
+	  detailRef.on("value", function(snapshot) {
+
+
+
+	    // $('#experiments').html('');
+	    var detaildata = snapshot.val();
+	    console.log("detail",detaildata);
+	      $('#myModal').modal('show');
+	      $('#expName').text(detaildata.name);
+	      $('#description').text(detaildata.description);
+
+	      $('#attend').on('click',function(){
+	        var mail =  $('#email').val();
+	        console.log(mail);
+	            detailRef.child('email').set(mail);
+	            $('#myModal').modal('hide');
+	      })
+
+
+	  });
+
+	});
 
 
 /***/ }
