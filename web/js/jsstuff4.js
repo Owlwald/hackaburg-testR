@@ -23,11 +23,11 @@ myFirebaseRef.orderByChild("starttime").on("value", function (snapshot) {
 
             console.log(item.uuid);
             var state;
-            
+
             if (item.available && item.uuid === authData.uid) {
                 state = "bg-primary";
-                
-                items.push('<div class="row '+ state + ' id_'+cnt+ '">');
+
+                items.push('<div class="row '+ state + '>');
                 items.push('<div class="col-sm-12"><h3><p id="name">' + item.name + '</p></h3></div>');
                 items.push('<div class="col-sm-6"><dl class="dl-horizontal">');
                 items.push('<dt class="duration"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </dt><dd>' + item.duration + ' min</dd>');
