@@ -4,12 +4,13 @@
 
 .col-sm-8.items{
 
-  margin-bottom: 1px !important;
+  margin-bottom: 12px !important;
 }
 
 .rounded{
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 6px;
+box-sizing: border-box;
+  border-top: 2px rgb(13, 46, 187);
+
 }
 
 .navbar-inverse{
@@ -29,4 +30,29 @@
 
 .navbar a{
   color: white !important;
+}
+
+.lightblue{
+  background-color: rgb(48, 86, 222);
+}
+
+.list-h3{
+  background-color: white;
+  padding-left: 10px;
+  display: block;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 0px !important;
+  margin-top: 4px;
+  padding-top: 13px;
+}
+
+.items .col-sm-12 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.items .col-sm-6{
+  background-color: rgb(231, 240, 255);
+
 }

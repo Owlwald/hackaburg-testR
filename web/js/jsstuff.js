@@ -13,10 +13,10 @@ if(data.length != 0){
 
   var state;
   if(item.available){
-    state = "bg-primary";
+    state = "lightblue";
     items.push('<div id="'+cnt+'" class="items rounded col-sm-8 col-sm-offset-2 '+state+'">');
-    items.push('<div class="row items'+state+'">');
-    items.push('<div class="col-sm-8 "><h3><p id="name">'+item.name+'</p></h3></div>');
+    items.push('<div class="row items">');
+    items.push('<div class="col-sm-12 "><h3 class="list-h3"><p id="name">'+item.name+'</p></h3></div>');
     items.push('<div class="col-sm-6"><dl class="dl-horizontal">');
     items.push('<dt class="duration"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> </dt><dd>'+item.duration+' min</dd>');
     items.push('<dt class="category"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> </dt><dd>'+item.category+'</dd>');
@@ -68,6 +68,7 @@ $("#experiments").on('click','> *', function(e){
     console.log("detail",detaildata);
       $('#myModal').modal('show');
       $('#expName').text(detaildata.name);
+      $('#description').text(detaildata.description);
 
 
     // var state = 'bg-primary';
