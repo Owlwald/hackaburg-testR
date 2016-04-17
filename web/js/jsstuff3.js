@@ -27,7 +27,10 @@ var loginButton = document.querySelector("#login");
 loginButton.addEventListener("click",onclickk);
 
 function onclickk(){
-    if(authData){location.href="./create_experiment.html";}
+    if(authData){
+        console.log("gocreate");
+        location.href="./create_experiment.html";
+                }
     else{
     myFirebaseRef.authWithOAuthPopup("google", authHandler);}
 }

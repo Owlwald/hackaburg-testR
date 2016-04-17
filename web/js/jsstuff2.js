@@ -70,8 +70,18 @@ function authHandler(error, authData) {
         var location = document.querySelector("#input_location").value;
 
         var description = document.querySelector("#input_description").value;
+                var date = document.querySelector("#input_date").value;
 
-        var date = document.querySelector("#input_date").value;
+        var d = Date.now();
+        var n = new Date(date) / 1000;
+        console.log(d);
+        alert(d);
+        var startdate = date+" "+starttime;
+        alert(startdate);
+        n = startdate.split(" - ").map(function (date) {
+            return Date.parse(date + "-0500") / 1000;
+        }).join(" - ");
+        alert(n);
         usersRef.push({
             'name': name,
             'category': category,
@@ -82,8 +92,8 @@ function authHandler(error, authData) {
             'location': location,
             'description': description,
             'available': true,
-            'uuid': authData.uid
+            'uuid': authData.uid,
+            'unixtime':n
         });
     }
-}
->>>>>>> origin/dev_app
+}>>>>>>> origin/dev_app
