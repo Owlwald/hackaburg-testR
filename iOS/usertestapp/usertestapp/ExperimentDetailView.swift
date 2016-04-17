@@ -12,6 +12,7 @@ import UIKit
 class ExperimentDetailView: UIView {
     let outerStackView = UIStackView(forAutoLayout: ())
     let titleLabel = BaseLabel(forAutoLayout: ())
+    let descriptionStackView = UIStackView(forAutoLayout: ())
     let detailStackView = DetailStackView(forAutoLayout: ())
     let descriptionLabel = BaseLabel(forAutoLayout: ())
     let descriptionTextLabel = SubtitleLabel(forAutoLayout: ())
@@ -29,11 +30,11 @@ class ExperimentDetailView: UIView {
     func setupLayout() {
         self.addSubview(outerStackView)
         outerStackView.autoPinEdgesToSuperviewEdges()
-        
-        outerStackView.addArrangedSubview(titleLabel)
+
+        let titleStackView = UIStackView(arrangedSubviews: [titleLabel])
+        outerStackView.addArrangedSubview(titleStackView)
         outerStackView.addArrangedSubview(detailStackView)
-        outerStackView.addArrangedSubview(descriptionLabel)
-        outerStackView.addArrangedSubview(descriptionTextLabel)
+        outerStackView.addArrangedSubview(descriptionStackView)
         outerStackView.addArrangedSubview(actionButton)
         
         outerStackView.axis = .Vertical
@@ -41,8 +42,19 @@ class ExperimentDetailView: UIView {
         outerStackView.distribution = .Fill
         outerStackView.spacing = 16
         
+        titleStackView.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 0, right: 16)
+        titleStackView.layoutMarginsRelativeArrangement = true
+        
+        descriptionStackView.addArrangedSubview(descriptionLabel)
+        descriptionStackView.addArrangedSubview(descriptionTextLabel)
+        descriptionStackView.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        descriptionStackView.layoutMarginsRelativeArrangement = true
+        descriptionStackView.axis = .Vertical
+        descriptionStackView.spacing = 8
+        
         titleLabel.font = UIFont(name: titleLabel.font!.fontName, size: 32)
         titleLabel.numberOfLines = 2
+        
         descriptionTextLabel.numberOfLines = 0
         detailStackView.setupLayout()
         detailStackView.backgroundColor = UIColor.lightBlueBackgroundColor()
@@ -52,6 +64,10 @@ class ExperimentDetailView: UIView {
     }
     
     func setExperiment(experiment: Experiment) {
+        if experiment.description.isEmpty {
+                outerStackView.removeArrangedSubview(descriptionStackView)
+                descriptionStackView.hidden = true
+        }
         titleLabel.text = experiment.title
         descriptionLabel.text = "Description"
         descriptionTextLabel.text = experiment.description
