@@ -13,7 +13,6 @@
 		2B4827001CC260130088FAA5 /* usertestappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4826FF1CC260130088FAA5 /* usertestappUITests.swift */; };
 		2B4827161CC27D170088FAA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827151CC27D170088FAA5 /* MainViewController.swift */; };
 		2B4827181CC281C70088FAA5 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827171CC281C70088FAA5 /* BaseNavigationViewController.swift */; };
-		2B48271A1CC285B20088FAA5 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4827191CC285B20088FAA5 /* MainTabViewController.swift */; };
 		2B48271C1CC28B890088FAA5 /* Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B48271B1CC28B890088FAA5 /* Experiment.swift */; };
 		2B48271E1CC28CCA0088FAA5 /* ExperimentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B48271D1CC28CCA0088FAA5 /* ExperimentTableViewController.swift */; };
 		2B4827201CC28DDB0088FAA5 /* ExperimentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B48271F1CC28DDB0088FAA5 /* ExperimentsViewModel.swift */; };
@@ -63,7 +62,6 @@
 		2B4827011CC260130088FAA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B4827151CC27D170088FAA5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2B4827171CC281C70088FAA5 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
-		2B4827191CC285B20088FAA5 /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		2B48271B1CC28B890088FAA5 /* Experiment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Experiment.swift; sourceTree = "<group>"; };
 		2B48271D1CC28CCA0088FAA5 /* ExperimentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentTableViewController.swift; sourceTree = "<group>"; };
 		2B48271F1CC28DDB0088FAA5 /* ExperimentsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperimentsViewModel.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 			children = (
 				2B4827151CC27D170088FAA5 /* MainViewController.swift */,
 				2B4827171CC281C70088FAA5 /* BaseNavigationViewController.swift */,
-				2B4827191CC285B20088FAA5 /* MainTabViewController.swift */,
 				2B48271D1CC28CCA0088FAA5 /* ExperimentTableViewController.swift */,
 				2B48272C1CC2A6820088FAA5 /* ExperimentDetailViewController.swift */,
 			);
@@ -452,7 +449,6 @@
 				2B48271C1CC28B890088FAA5 /* Experiment.swift in Sources */,
 				2B4827181CC281C70088FAA5 /* BaseNavigationViewController.swift in Sources */,
 				2B48272D1CC2A6820088FAA5 /* ExperimentDetailViewController.swift in Sources */,
-				2B48271A1CC285B20088FAA5 /* MainTabViewController.swift in Sources */,
 				2B5ED2B91CC2B84100236601 /* FireBaseStore.swift in Sources */,
 				2B6412A81CC2F07200D35032 /* UIColor.swift in Sources */,
 				2B4827221CC291360088FAA5 /* ExperimentTableViewCell.swift in Sources */,
