@@ -8,14 +8,14 @@ var end = myFirebaseRef.child("Ende");
 var name = myFirebaseRef.child("Name");
 var location = myFirebaseRef.child("Ort");
 var start = myFirebaseRef.child("Start");
-
+var d = Date.now();
 
 console.log(authData);
 
-myFirebaseRef.orderByChild("starttime").on("value", function (snapshot) {
+myFirebaseRef.orderByChild('unixtime').startAt(d).on("value", function (snapshot) {
     $('#experiments').html('');
     var data = snapshot.val();
-
+    console.log(data);
     var items = [];
     var cnt = 0;
     if (data.length != 0) {
@@ -43,6 +43,7 @@ myFirebaseRef.orderByChild("starttime").on("value", function (snapshot) {
                 state = "bg-danger";
             }
         });
+        console.log(items);
 
         $('#my_experiments').append(items.join(''));
     }

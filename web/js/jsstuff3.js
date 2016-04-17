@@ -13,11 +13,24 @@ myFirebaseRef.onAuth(function(authData) {
   }
 });
 
+var loginButtond = document.querySelector("#logind");
+loginButtond.addEventListener("click",onclick);
+
+function onclick(){
+    if(authData){location.href="./my_experiments.html";}
+    else{
+    myFirebaseRef.authWithOAuthPopup("google", authHandler);}
+}
+
+
 var loginButton = document.querySelector("#login");
 loginButton.addEventListener("click",onclickk);
 
 function onclickk(){
-    if(authData){location.href="./create_experiment.html";}
+    if(authData){
+        console.log("gocreate");
+        location.href="./create_experiment.html";
+                }
     else{
     myFirebaseRef.authWithOAuthPopup("google", authHandler);}
 }
