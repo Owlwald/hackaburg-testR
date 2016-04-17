@@ -27,10 +27,8 @@ class ExperimentTableViewController: UITableViewController {
     }
     
     func setupNavBarButtons() {
-        let settingsButton = UIBarButtonItem(image: UIImage(named: "icon_settings"), style: .Plain, target: self, action: "test")
-        let reloadButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "test")
-        
-        self.navigationItem.rightBarButtonItems = [settingsButton, reloadButton]
+        let reloadButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(reload))
+        self.navigationItem.rightBarButtonItems = [reloadButton]
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
