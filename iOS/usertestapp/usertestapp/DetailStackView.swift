@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-class DetailStackView: UIStackView {
+class DetailStackView: UIView {
     
+    let detailStackView = UIStackView(forAutoLayout: ())
     let leftInnerDetailStackView = UIStackView(forAutoLayout: ())
     let rightInnerDetailStackView = UIStackView(forAutoLayout: ())
     
@@ -24,18 +25,25 @@ class DetailStackView: UIStackView {
     let rewardImageLabel = DetailImageLabel(forAutoLayout: ())
     let locationImageLabel = DetailImageLabel(forAutoLayout: ())
 
+    // SpacerView
+    
+    let spacerViewTop = UIView(forAutoLayout: ())
+    let spacerViewBottom = UIView(forAutoLayout: ())
 
     
     func setupLayout() {
-        self.layoutMargins = UIEdgeInsetsMake(8, 8, 8, 8)
-        self.layoutMarginsRelativeArrangement = true
-        self.addArrangedSubview(leftInnerDetailStackView)
-        self.addArrangedSubview(rightInnerDetailStackView)
+        self.addSubview(detailStackView)
+        detailStackView.autoPinEdgesToSuperviewEdges()
         
-        self.axis = .Horizontal
-        self.spacing = 16
-        self.distribution = .FillEqually
-        self.alignment = .Center
+        detailStackView.layoutMargins = UIEdgeInsetsMake(0, 16, 0, 16)
+        detailStackView.layoutMarginsRelativeArrangement = true
+        detailStackView.addArrangedSubview(leftInnerDetailStackView)
+        detailStackView.addArrangedSubview(rightInnerDetailStackView)
+        
+        detailStackView.axis = .Horizontal
+        detailStackView.spacing = 16
+        detailStackView.distribution = .FillEqually
+        detailStackView.alignment = .Center
         
         leftInnerDetailStackView.addArrangedSubview(typeImageLabel)
         leftInnerDetailStackView.addArrangedSubview(durationImageLabel)
@@ -44,6 +52,22 @@ class DetailStackView: UIStackView {
         rightInnerDetailStackView.addArrangedSubview(rewardImageLabel)
         rightInnerDetailStackView.addArrangedSubview(locationImageLabel)
         
+        leftInnerDetailStackView.layoutMargins = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+        leftInnerDetailStackView.layoutMarginsRelativeArrangement = true
+        
+        rightInnerDetailStackView.layoutMargins = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+        rightInnerDetailStackView.layoutMarginsRelativeArrangement = true
+        
+        spacerViewTop.autoSetDimension(.Height, toSize: 2)
+        spacerViewTop.backgroundColor = UIColor.lightGrayColor()
+        spacerViewBottom.autoSetDimension(.Height, toSize: 2)
+        spacerViewBottom.backgroundColor = UIColor.lightGrayColor()
+        
+        detailStackView.addSubview(spacerViewTop)
+        detailStackView.addSubview(spacerViewBottom)
+        
+        spacerViewTop.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: .Bottom)
+        spacerViewBottom.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: .Top)
         
         leftInnerDetailStackView.axis = .Vertical
         leftInnerDetailStackView.spacing = 8

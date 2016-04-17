@@ -45,6 +45,7 @@ class ExperimentDetailView: UIView {
         titleLabel.numberOfLines = 2
         descriptionTextLabel.numberOfLines = 0
         detailStackView.setupLayout()
+        detailStackView.backgroundColor = UIColor.lightBlueBackgroundColor()
         
         
         actionButton.setImage(UIImage(named: "button_participate"), forState: .Normal)
