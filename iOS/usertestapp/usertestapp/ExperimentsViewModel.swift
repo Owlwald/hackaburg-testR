@@ -26,6 +26,7 @@ class ExperimentsViewModel {
     func loadData() -> Promise<Void>{
         return store.getExperiments().then { items -> Void in
             self.items = items
+            self.items = self.items.filter { !$0.startDate.isInPast() }
             self.items.sortInPlace { $0.startDate.earlierDate($1.startDate) == $0.startDate }
         }
     }
