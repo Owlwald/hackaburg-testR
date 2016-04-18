@@ -27,13 +27,13 @@ function onclick() {
         var d = Date.now();
         var n = new Date(date) / 1000;
         console.log(d);
-        alert(d);
+        // alert(d);
         var startdate = date+" "+starttime;
-        alert(startdate);
+        // alert(startdate);
         n = startdate.split(" - ").map(function (date) {
             return Date.parse(date + "-0500") / 1000;
         }).join(" - ");
-        alert(n);
+        // alert(n);
         usersRef.push({
             'name': name,
             'category': category,

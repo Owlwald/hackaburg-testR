@@ -151,7 +151,7 @@
 
 
 	    $('#confirm').on('click',function(){
-	      
+	       
 	      if(curr){
 	          $('#my_experiments').html('');
 	        switchref.child('available').set(false);
